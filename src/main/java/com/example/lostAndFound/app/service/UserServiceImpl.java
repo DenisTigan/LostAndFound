@@ -29,6 +29,8 @@ public class UserServiceImpl implements UserService {
                 .firstName(entity.getFirstName())
                 .lastName(entity.getLastName())
                 .phoneNumber(entity.getPhone())
+                .address(entity.getAddress())
+                .role(entity.getRole().toString())
                 .build();
     }
 }
