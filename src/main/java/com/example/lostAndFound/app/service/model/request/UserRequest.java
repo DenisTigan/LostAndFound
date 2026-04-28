@@ -1,25 +1,20 @@
-package com.example.lostAndFound.app.service.model.response;
+package com.example.lostAndFound.app.service.model.request;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserResponse {
-    private Long id;
+public class UserRequest {
     private String email;
     private String username;
     private String firstName;
     private String lastName;
-    private String phoneNumber;
     private String address;
     private String phone;
-    private LocalDateTime createdAt;
-    private String role;
 }
