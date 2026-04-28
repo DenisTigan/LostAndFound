@@ -52,6 +52,10 @@ public class ItemEntity {
     @Column(name = "ITEM_CATEGORY", nullable = false)
     private ItemCategory category;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "lost_and_found_user", nullable = false)
+    private UserEntity user;
+
     @PrePersist
     private void onPrePersist(){
         this.updatedAt = LocalDate.now();
