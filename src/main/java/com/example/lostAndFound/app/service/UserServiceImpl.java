@@ -1,7 +1,7 @@
 package com.example.lostAndFound.app.service;
 
 import com.example.lostAndFound.app.repository.entity.UserEntity;
-import com.example.lostAndFound.app.repository.entity.UserRepository;
+import com.example.lostAndFound.app.repository.UserRepository;
 import com.example.lostAndFound.app.service.model.request.UserRequest;
 import com.example.lostAndFound.app.service.model.response.UserResponse;
 import com.example.lostAndFound.app.utils.UserConverter;
