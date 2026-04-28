@@ -48,6 +48,7 @@ public class ItemEntity {
     private String location;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Column(name = "ITEM_CATEGORY", nullable = false)
     private ItemCategory category;
 
