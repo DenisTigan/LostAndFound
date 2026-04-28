@@ -14,21 +14,12 @@ import java.time.LocalDate;
 @Data
 @Builder
 public class ItemResponseDto {
-
     private Long id;
-
     private String title;
-
     private ItemStatus status;
-
     private String description;
-
     private LocalDate publishDate;
-
     private LocalDate expirationDate;
-
     private String location;
-
     private ItemCategory category;
-
 }

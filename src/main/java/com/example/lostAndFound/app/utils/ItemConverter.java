@@ -1,9 +1,11 @@
 package com.example.lostAndFound.app.utils;
 
 import com.example.lostAndFound.api.dto.request.AddItemRequestDto;
+import com.example.lostAndFound.api.dto.request.ItemUpdateRequestDto;
 import com.example.lostAndFound.api.dto.response.ItemResponseDto;
 import com.example.lostAndFound.app.repository.entity.ItemEntity;
 import com.example.lostAndFound.app.service.model.request.ItemRequest;
+import com.example.lostAndFound.app.service.model.request.ItemUpdateRequest;
 import com.example.lostAndFound.app.service.model.response.ItemResponse;
 import lombok.experimental.UtilityClass;
 
@@ -39,16 +41,27 @@ public class ItemConverter {
                 .category(itemEntity.getCategory()).build();
     }
 
-    public ItemResponseDto covertItemResponseToItemResponseDto(ItemResponse itemResponse){
+    public ItemResponseDto convertToItemResponseDto(ItemResponse item) {
         return ItemResponseDto.builder()
-                .id(itemResponse.getId())
-                .title(itemResponse.getTitle())
-                .status(itemResponse.getStatus())
-                .description(itemResponse.getDescription())
-                .publishDate(itemResponse.getPublishDate())
-                .expirationDate(itemResponse.getExpirationDate())
-                .location(itemResponse.getLocation())
-                .category(itemResponse.getCategory()).build();
+                .id(item.getId())
+                .title(item.getTitle())
+                .status(item.getStatus())
+                .description(item.getDescription())
+                .expirationDate(item.getExpirationDate())
+                .location(item.getLocation())
+                .publishDate(item.getPublishDate())
+                .category(item.getCategory())
+                .build();
+    }
+
+    public ItemUpdateRequest convertToItemUpdateRequest(ItemUpdateRequestDto itemUpdateRequestDto) {
+        return ItemUpdateRequest.builder()
+                .status(itemUpdateRequestDto.getStatus())
+                .title(itemUpdateRequestDto.getTitle())
+                .description(itemUpdateRequestDto.getDescription())
+                .category(itemUpdateRequestDto.getCategory())
+                .location(itemUpdateRequestDto.getLocation())
+                .build();
     }
 
     public ItemRequest convertRequestDtoToItemRequest(AddItemRequestDto newRequest){
